@@ -28,7 +28,7 @@ namespace pocketmine {
 	use pocketmine\utils\Utils;
 	use pocketmine\wizard\Installer;
 
-	const VERSION = '1.6.0';
+	const VERSION = '1.6.1';
 	const API_VERSION = "1.13.0";
 	const CODENAME = "Mockingbird";
 	const MINECRAFT_VERSION = "v1.x";
