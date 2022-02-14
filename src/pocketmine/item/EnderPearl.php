@@ -25,22 +25,10 @@ namespace pocketmine\item;
 
 class EnderPearl extends Item {
     public function __construct(int $meta = 0){
-        parent::__construct(self::ENDER_PERL, $meta, "Ender Pearl");
+        parent::__construct(self::ENDER_PEARL, $meta,1, "Ender Pearl");
     }
 
     public function getMaxStackSize() : int{
         return 16;
-    }
-
-    public function getProjectileEntityType() : string{
-        return "ThrownEnderpearl";
-    }
-
-    public function getThrowForce() : float{
-        return 1.5;
-    }
-
-    public function getCooldownTicks() : int{
-        return 20;
     }
 }

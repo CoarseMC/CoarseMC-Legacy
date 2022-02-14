@@ -797,29 +797,12 @@ abstract class Entity extends Location implements Metadatable{
 		$this->maxHealth = (int) $amount;
 	}
 
-    public function getOwningEntity() : ?Entity{
-        $eid = $this->getOwningEntityId();
-        if($eid !== null){
-            return $this->server->findEntity($eid);
-        }
-
-        return null;
-    }
 
     /**
      * Sets the owner of the entity. Passing null will remove the current owner.
      *
      * @throws \InvalidArgumentException if the supplied entity is not valid
      */
-    public function setOwningEntity(?Entity $owner) : void{
-        if($owner === null){
-            $this->propertyManager->removeProperty(self::DATA_OWNER_EID);
-        }elseif($owner->closed){
-            throw new \InvalidArgumentException("Supplied owning entity is garbage and cannot be used");
-        }else{
-            $this->propertyManager->setLong(self::DATA_OWNER_EID, $owner->getId());
-        }
-    }
 
 	public function canCollideWith(Entity $entity) {
 		return !$this->justCreated && $entity !== $this;

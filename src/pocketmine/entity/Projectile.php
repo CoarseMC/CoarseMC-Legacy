@@ -114,7 +114,7 @@ abstract class Projectile extends Entity {
 				}
 			}
 			// find nearest collided block
-			$blockList = $this->getLevel()->getCollisionBlocks($this->boundingBox->addCoord($this->motionX, $this->motionY, $this->motionZ), $this);
+			$blockList = $this->getLevel()->getCollisionBlocks($this->boundingBox->addCoord($this->motionX, $this->motionY, $this->motionZ));
 			$nearBlockDistance = PHP_INT_MAX;
 			$nearBlock = null;
 			foreach ($blockList as $block) {

@@ -1,12 +1,4 @@
-# Advanced configuration file for PocketMine-Soft
-
-#Lists the plugins that should be downloaded if non existent to the server.
-#Plugin names are case-sensitive.
-#Plugins can also be in the current filesystem
-plugins:
- #Examples:
- #BigBrother: "https://github.com/shoghicp/BigBrother/releases/download/v1.3.0-beta/BigBrother_v1.3.0-beta.phar"
- #SimpleAuth: "/full/path/to/file/SimpleAuth.phar"
+# Advanced configuration file for Steadfast3
 
 messages:
  #Message shown when a player uses a not registered or non-existent command

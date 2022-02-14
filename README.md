@@ -23,13 +23,16 @@
 
 - <h3>Todo-list:</h3>
 - [ ] LevelDB 
-- [ ] Ender Pearl
+- [x] Ender Pearl
 - [ ] More Block IDS
 - [ ] And more
 - <h3>Known bugs:</h3>
   • Players don't fall out of the world naturally, you'll want to handle PlayerMoveEvent as needed to kill them. <br>
-  • Ender Pearl item ids is not 368 and not throwable <br>
-  • Some blocks is not placeable/editable
+  • Some blocks is not placeable/editable.
+
+- <h3>Developers Notes:</h3>
+  • Ender Pearl item ids is 422 instead of 368 due some item ids conflict problem.
+
 <div align="center">
 	<h2>How to setup?</h2>
 </div>

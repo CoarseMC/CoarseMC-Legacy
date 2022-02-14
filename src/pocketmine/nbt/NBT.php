@@ -694,7 +694,7 @@ class NBT{
 	private static function toArray(array &$data, Tag $tag){
 		/** @var Compound[]|Enum[]|IntArray[] $tag */
 		foreach($tag as $key => $value){
-			if($value instanceof Compound or $value instanceof Enum or $value instanceof IntArray){
+			if($value instanceof Compound or $value instanceof Enum || $value instanceof IntArray){
 				$data[$key] = [];
 				self::toArray($data[$key], $value);
 			}else{

@@ -118,7 +118,6 @@ use pocketmine\network\protocol\InteractPacket;
 use pocketmine\network\protocol\ItemComponentPacket;
 use pocketmine\network\protocol\LevelEventPacket;
 use pocketmine\network\protocol\LevelSoundEventPacket;
-use pocketmine\network\protocol\ModalFormRequestPacket;
 use pocketmine\network\protocol\MovePlayerPacket;
 use pocketmine\network\protocol\PEPacket;
 use pocketmine\network\protocol\PlayerActionPacket;
@@ -3380,7 +3379,10 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer
 		$pk->started = true;
 		$this->dataPacket($pk);
 
-		$this->server->getLogger()->info(TextFormat::AQUA . $this->username . TextFormat::WHITE . "/" . TextFormat::AQUA . $this->ip . " connected");
+		$this->server->getLogger()->info(TextFormat::YELLOW . $this->username . TextFormat::WHITE . " connected to server");
+        $this->server->getLogger()->info("IP: " . TextFormat::AQUA . $this->ip);
+        $this->server->getLogger()->info("XUID: " . TextFormat::AQUA . $this->getXUID());
+        $this->server->getLogger()->info("UUID: " . TextFormat::AQUA . $this->getUniqueId());
 
 
 		$this->sendSelfData();
@@ -4078,7 +4080,7 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer
 						$this->startAction = -1;
 						return;
 					}
-				} elseif ($itemInHand->getId() === Item::SNOWBALL || $itemInHand->getId() === Item::SPLASH_POTION || $itemInHand->getId() === Item::EGG || $itemInHand->getId() === Item::BOTTLE_ENCHANTING) {
+				} elseif ($itemInHand->getId() === Item::SNOWBALL || $itemInHand->getId() === Item::SPLASH_POTION || $itemInHand->getId() === Item::EGG || $itemInHand->getId() === Item::BOTTLE_ENCHANTING || $itemInHand->getId() === Item::ENDER_PEARL) {
 					$yawRad = $this->yaw / 180 * M_PI;
 					$pitchRad = $this->pitch / 180 * M_PI;
 					$nbt = new Compound("", [
@@ -4106,13 +4108,12 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer
 						case Item::EGG:
 							$projectile = Entity::createEntity("Egg", $this->chunk, $nbt, $this);
 							break;
-						case Item::BOTTLE_ENCHANTING:
-							$f = .3;
-							$projectile = Entity::createEntity("BottleOEnchanting", $this->chunk, $nbt, $this);
-							break;
-						case Item::SPLASH_POTION:
-							$projectile = Entity::createEntity("SplashPotion", $this->chunk, $nbt, $this, $itemInHand->getDamage());
-							break;
+                        case Item::SPLASH_POTION:
+                            $projectile = Entity::createEntity("SplashPotion", $this->chunk, $nbt, $this, $itemInHand->getDamage());
+                            break;
+                        case Item::ENDER_PEARL:
+                            $projectile = Entity::createEntity("EnderPearl", $this->chunk, $nbt, $this);
+                            break;
 					}
 					$projectile->setMotion($projectile->getMotion()->multiply($f));
 					if ($this->isSurvival()) {

@@ -33,6 +33,7 @@ use pocketmine\command\PluginIdentifiableCommand;
 use pocketmine\command\SimpleCommandMap;
 use pocketmine\entity\Arrow;
 use pocketmine\entity\Effect;
+use pocketmine\entity\EnderPearl;
 use pocketmine\entity\Entity;
 use pocketmine\entity\ExperienceOrb;
 use pocketmine\entity\FallingSand;
@@ -41,7 +42,6 @@ use pocketmine\entity\Item as DroppedItem;
 use pocketmine\entity\Painting;
 use pocketmine\entity\PrimedTNT;
 use pocketmine\entity\projectile\BottleOEnchanting;
-use pocketmine\entity\projectile\EnderPearl;
 use pocketmine\entity\projectile\SplashPotion;
 use pocketmine\entity\Snowball;
 use pocketmine\entity\Egg;
@@ -2567,7 +2567,6 @@ class Server{
 		Entity::registerEntity(ExperienceOrb::class);
 
 		Entity::registerEntity(Painting::class);
-
         Entity::registerEntity(EnderPearl::class);
 	}
 
