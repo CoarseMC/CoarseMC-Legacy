@@ -4108,6 +4108,10 @@ class Player extends Human implements CommandSender, InventoryHolder, IPlayer
 						case Item::EGG:
 							$projectile = Entity::createEntity("Egg", $this->chunk, $nbt, $this);
 							break;
+                        case Item::BOTTLE_ENCHANTING:
+                            $f = .3;
+                            $projectile = Entity::createEntity("BottleOEnchanting", $this->chunk, $nbt, $this);
+                            break;
                         case Item::SPLASH_POTION:
                             $projectile = Entity::createEntity("SplashPotion", $this->chunk, $nbt, $this, $itemInHand->getDamage());
                             break;
