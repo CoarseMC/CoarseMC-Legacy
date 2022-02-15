@@ -67,7 +67,7 @@ class McRegion extends BaseLevelProvider{
 		return $isValid;
 	}
 
-	public static function generate($path, $name, $seed, array $options = []){
+	public static function generate($path, $name, $seed, $options = []){
 		if(!file_exists($path)){
 			mkdir($path, 0777, true);
 		}

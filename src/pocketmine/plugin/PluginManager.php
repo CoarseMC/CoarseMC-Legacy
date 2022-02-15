@@ -741,8 +741,8 @@ class PluginManager
 				}
 
 				$parameters = $method->getParameters();
-				if(count($parameters) === 1 and $parameters[0]->getClass() instanceof \ReflectionClass and is_subclass_of($parameters[0]->getClass()->getName(), Event::class)){
-					$class = $parameters[0]->getClass()->getName();
+				if(count($parameters) === 1 and $parameters[0]->getType() instanceof \ReflectionClass and is_subclass_of($parameters[0]->getType()->getName(), Event::class)){
+					$class = $parameters[0]->getType()->getName();
 					$reflection = new \ReflectionClass($class);
 					if(strpos((string) $reflection->getDocComment(), "@deprecated") !== false and $this->server->getProperty("settings.deprecated-verbose", true)){
 						$this->server->getLogger()->warning('Plugin ' . $plugin->getName() . ' has registered a listener for ' . $class . ' on method ' . get_class($listener) . '->' . $method->getName() . '(), but the event is Deprecated.');
