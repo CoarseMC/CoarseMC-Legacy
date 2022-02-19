@@ -143,6 +143,7 @@ use pocketmine\network\protocol\TextPacket;
 use pocketmine\network\protocol\TransferPacket;
 use pocketmine\network\protocol\UpdateAttributesPacket;
 use pocketmine\network\protocol\UpdateBlockPacket;
+use pocketmine\network\protocol\types\DeviceOS;
 use pocketmine\network\protocol\v120\InventoryTransactionPacket;
 use pocketmine\network\protocol\v120\PlayerSkinPacket;
 use pocketmine\network\protocol\v120\Protocol120;
@@ -170,24 +171,10 @@ use function random_int;
 /**
  * Main class that handles networking, recovery, and packet sending to the server part
  */
-class Player extends Human implements CommandSender, InventoryHolder, IPlayer
+class Player extends Human implements CommandSender, InventoryHolder, IPlayer, DeviceOS
 {
 
 	use PlayerSettingsTrait;
-
-	public const OS_ANDROID = 1;
-	public const OS_IOS = 2;
-	public const OS_OSX = 3;
-	public const OS_FIREOS = 4;
-	public const OS_GEARVR = 5;
-	public const OS_HOLOLENS = 6;
-	public const OS_WIN10 = 7;
-	public const OS_WIN32 = 8;
-	public const OS_DEDICATED = 9;
-	public const OS_TVOS = 10;
-	public const OS_ORBIS = 11;
-	public const OS_NX = 12;
-	public const OS_UNKNOWN = -1;
 
 	public const INVENTORY_CLASSIC = 0;
 	public const INVENTORY_POCKET = 1;
