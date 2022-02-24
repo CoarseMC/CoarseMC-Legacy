@@ -35,6 +35,7 @@ abstract class Tool extends Item {
 	const TIER_STONE = 3;
 	const TIER_IRON = 4;
 	const TIER_DIAMOND = 5;
+    const TIER_NETHERITE = 6;
 	const TYPE_NONE = 0;
 	const TYPE_SWORD = 1;
 	const TYPE_SHOVEL = 2;
@@ -104,6 +105,7 @@ abstract class Tool extends Item {
 			3 => 132,
 			4 => 251,
 			5 => 1562,
+            6 => 2032,
 			self::FLINT_STEEL => 65,
 			self::SHEARS => 239,
 			self::BOW => 385,

@@ -303,6 +303,11 @@ class Item {
     const DIAMOND_SHOVEL = 317;
     const DIAMOND_PICKAXE = 318;
     const DIAMOND_AXE = 319;
+    const NETHERITE_SWORD = 743;
+    const NETHERITE_SHOVEL = 744;
+    const NETHERITE_PICKAXE = 745;
+    const NETHERITE_AXE = 746;
+    const NETHERITE_HOE = 747;
     const STICKS = 320;
     const BOWL = 321;
     const MUSHROOM_STEW = 260;
@@ -333,6 +338,10 @@ class Item {
     const IRON_CHESTPLATE = 344;
     const IRON_LEGGINGS = 345;
     const IRON_BOOTS = 346;
+    const NETHERITE_HELMET = 748;
+    const NETHERITE_CHESTPLATE = 749;
+    const NETHERITE_LEGGINGS = 750;
+    const NETHERITE_BOOTS = 751;
     const DIAMOND_HELMET = 347;
     const DIAMOND_CHESTPLATE = 348;
     const DIAMOND_LEGGINGS = 349;
@@ -995,6 +1004,15 @@ class Item {
         551 => "Cooked Mutton",
         266 => "Tropical Fish",
         259 => "Enchanted Golden Apple",
+        743 => "Netherite Sword",
+        744 => "Netherite Shovel",
+        745 => "Netherite Pickaxe",
+        746 => "Netherite Axe",
+        747 => "Netherite Hoe",
+        748 => "Netherite Helmet",
+        749 => "Netherite Chestplate",
+        750 => "Netherite Leggings",
+        751 => "Netherite Boots",
     ];
 
     /** @var \SplFixedArray */
@@ -1065,6 +1083,10 @@ class Item {
             self::$list[self::DIAMOND_CHESTPLATE] = DiamondChestplate::class;
             self::$list[self::DIAMOND_LEGGINGS] = DiamondLeggings::class;
             self::$list[self::DIAMOND_BOOTS] = DiamondBoots::class;
+            self::$list[self::NETHERITE_HELMET] = NetheriteHelmet::class;
+            self::$list[self::NETHERITE_CHESTPLATE] = NetheriteChestplate::class;
+            self::$list[self::NETHERITE_LEGGINGS] = NetheriteLeggings::class;
+            self::$list[self::NETHERITE_BOOTS] = NetheriteBoots::class;
             self::$list[self::IRON_SWORD] = IronSword::class;
             self::$list[self::IRON_INGOT] = IronIngot::class;
             self::$list[self::GOLD_INGOT] = GoldIngot::class;
@@ -1072,6 +1094,11 @@ class Item {
             self::$list[self::IRON_PICKAXE] = IronPickaxe::class;
             self::$list[self::IRON_AXE] = IronAxe::class;
             self::$list[self::IRON_HOE] = IronHoe::class;
+            self::$list[self::NETHERITE_SWORD] = NetheriteSword::class;
+            self::$list[self::NETHERITE_SHOVEL] = NetheriteShovel::class;
+            self::$list[self::NETHERITE_PICKAXE] = NetheritePickaxe::class;
+            self::$list[self::NETHERITE_AXE] = NetheriteAxe::class;
+            self::$list[self::NETHERITE_HOE] = NetheriteHoe::class;
             self::$list[self::DIAMOND_SWORD] = DiamondSword::class;
             self::$list[self::DIAMOND_SHOVEL] = DiamondShovel::class;
             self::$list[self::DIAMOND_PICKAXE] = DiamondPickaxe::class;
@@ -1501,54 +1528,61 @@ class Item {
         self::addCreativeItem(Item::get(Item::CHAIN_HELMET, 0), self::CREATIVE_GROUP_HELMET);
         self::addCreativeItem(Item::get(Item::IRON_HELMET, 0), self::CREATIVE_GROUP_HELMET);
         self::addCreativeItem(Item::get(Item::DIAMOND_HELMET, 0), self::CREATIVE_GROUP_HELMET);
+        self::addCreativeItem(Item::get(Item::NETHERITE_HELMET, 0), self::CREATIVE_GROUP_HELMET);
         self::addCreativeItem(Item::get(Item::GOLD_HELMET, 0), self::CREATIVE_GROUP_HELMET);
 
         self::addCreativeItem(Item::get(Item::LEATHER_TUNIC, 0), self::CREATIVE_GROUP_CHESTPLATE);
         self::addCreativeItem(Item::get(Item::CHAIN_CHESTPLATE, 0), self::CREATIVE_GROUP_CHESTPLATE);
         self::addCreativeItem(Item::get(Item::IRON_CHESTPLATE, 0), self::CREATIVE_GROUP_CHESTPLATE);
         self::addCreativeItem(Item::get(Item::DIAMOND_CHESTPLATE, 0), self::CREATIVE_GROUP_CHESTPLATE);
+        self::addCreativeItem(Item::get(Item::NETHERITE_CHESTPLATE, 0), self::CREATIVE_GROUP_CHESTPLATE);
         self::addCreativeItem(Item::get(Item::GOLD_CHESTPLATE, 0), self::CREATIVE_GROUP_CHESTPLATE);
 
         self::addCreativeItem(Item::get(Item::LEATHER_PANTS, 0), self::CREATIVE_GROUP_LEGGINGS);
         self::addCreativeItem(Item::get(Item::CHAIN_LEGGINGS, 0), self::CREATIVE_GROUP_LEGGINGS);
         self::addCreativeItem(Item::get(Item::IRON_LEGGINGS, 0), self::CREATIVE_GROUP_LEGGINGS);
-        self::addCreativeItem(Item::get(Item::DIAMOND_LEGGINGS, 0), self::CREATIVE_GROUP_LEGGINGS);
-        self::addCreativeItem(Item::get(Item::GOLD_LEGGINGS, 0), self::CREATIVE_GROUP_LEGGINGS);
+        self::addCreativeItem(Item::get(Item::NETHERITE_LEGGINGS, 0), self::CREATIVE_GROUP_LEGGINGS);
 
         self::addCreativeItem(Item::get(Item::LEATHER_BOOTS, 0), self::CREATIVE_GROUP_BOOTS);
         self::addCreativeItem(Item::get(Item::CHAIN_BOOTS, 0), self::CREATIVE_GROUP_BOOTS);
         self::addCreativeItem(Item::get(Item::IRON_BOOTS, 0), self::CREATIVE_GROUP_BOOTS);
         self::addCreativeItem(Item::get(Item::DIAMOND_BOOTS, 0), self::CREATIVE_GROUP_BOOTS);
+        self::addCreativeItem(Item::get(Item::NETHERITE_BOOTS, 0), self::CREATIVE_GROUP_BOOTS);
         self::addCreativeItem(Item::get(Item::GOLD_BOOTS, 0), self::CREATIVE_GROUP_BOOTS);
 
         self::addCreativeItem(Item::get(Item::WOODEN_SWORD, 0), self::CREATIVE_GROUP_SWORD);
         self::addCreativeItem(Item::get(Item::STONE_SWORD, 0), self::CREATIVE_GROUP_SWORD);
         self::addCreativeItem(Item::get(Item::IRON_SWORD, 0), self::CREATIVE_GROUP_SWORD);
         self::addCreativeItem(Item::get(Item::DIAMOND_SWORD, 0), self::CREATIVE_GROUP_SWORD);
+        self::addCreativeItem(Item::get(Item::NETHERITE_SWORD, 0), self::CREATIVE_GROUP_SWORD);
         self::addCreativeItem(Item::get(Item::GOLD_SWORD, 0), self::CREATIVE_GROUP_SWORD);
 
         self::addCreativeItem(Item::get(Item::WOODEN_AXE, 0), self::CREATIVE_GROUP_AXE);
         self::addCreativeItem(Item::get(Item::STONE_AXE, 0), self::CREATIVE_GROUP_AXE);
         self::addCreativeItem(Item::get(Item::IRON_AXE, 0), self::CREATIVE_GROUP_AXE);
         self::addCreativeItem(Item::get(Item::DIAMOND_AXE, 0), self::CREATIVE_GROUP_AXE);
+        self::addCreativeItem(Item::get(Item::NETHERITE_AXE, 0), self::CREATIVE_GROUP_AXE);
         self::addCreativeItem(Item::get(Item::GOLD_AXE, 0), self::CREATIVE_GROUP_AXE);
 
         self::addCreativeItem(Item::get(Item::WOODEN_PICKAXE, 0), self::CREATIVE_GROUP_PICKAXE);
         self::addCreativeItem(Item::get(Item::STONE_PICKAXE, 0), self::CREATIVE_GROUP_PICKAXE);
         self::addCreativeItem(Item::get(Item::IRON_PICKAXE, 0), self::CREATIVE_GROUP_PICKAXE);
         self::addCreativeItem(Item::get(Item::DIAMOND_PICKAXE, 0), self::CREATIVE_GROUP_PICKAXE);
+        self::addCreativeItem(Item::get(Item::NETHERITE_PICKAXE, 0), self::CREATIVE_GROUP_PICKAXE);
         self::addCreativeItem(Item::get(Item::GOLD_PICKAXE, 0), self::CREATIVE_GROUP_PICKAXE);
 
         self::addCreativeItem(Item::get(Item::WOODEN_SHOVEL, 0), self::CREATIVE_GROUP_SHOVEL);
         self::addCreativeItem(Item::get(Item::STONE_SHOVEL, 0), self::CREATIVE_GROUP_SHOVEL);
         self::addCreativeItem(Item::get(Item::IRON_SHOVEL, 0), self::CREATIVE_GROUP_SHOVEL);
         self::addCreativeItem(Item::get(Item::DIAMOND_SHOVEL, 0), self::CREATIVE_GROUP_SHOVEL);
+        self::addCreativeItem(Item::get(Item::NETHERITE_SHOVEL, 0), self::CREATIVE_GROUP_SHOVEL);
         self::addCreativeItem(Item::get(Item::GOLD_SHOVEL, 0), self::CREATIVE_GROUP_SHOVEL);
 
         self::addCreativeItem(Item::get(Item::WOODEN_HOE, 0), self::CREATIVE_GROUP_HOE);
         self::addCreativeItem(Item::get(Item::STONE_HOE, 0), self::CREATIVE_GROUP_HOE);
         self::addCreativeItem(Item::get(Item::IRON_HOE, 0), self::CREATIVE_GROUP_HOE);
         self::addCreativeItem(Item::get(Item::DIAMOND_HOE, 0), self::CREATIVE_GROUP_HOE);
+        self::addCreativeItem(Item::get(Item::NETHERITE_HOE, 0), self::CREATIVE_GROUP_HOE);
         self::addCreativeItem(Item::get(Item::GOLD_HOE, 0), self::CREATIVE_GROUP_HOE);
 
         self::addCreativeItem(Item::get(Item::BOW, 0));
@@ -1566,7 +1600,7 @@ class Item {
         self::addCreativeItem(Item::get(Item::CLOCK, 0));
         self::addCreativeItem(Item::get(Item::COMPASS, 0));
         self::addCreativeItem(Item::get(Item::STICKS, 0));
-        self::addCreativeItem(Item::get(Item::BED, 0), self::CREATIVE_GROUP_BED);
+        self::addCreativeItem(Item::get(Item::BED, 14), self::CREATIVE_GROUP_BED);
         self::addCreativeItem(Item::get(Item::TORCH, 0));
 
         self::addCreativeItem(Item::get(Item::WORKBENCH, 0));
