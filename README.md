@@ -3,7 +3,10 @@
 </div>
 <div align=center>
 	<a href=" https://github.com/CoarseMC/Server">
-		<img src="https://github.com/CoarseMC/Server/blob/main/Steadfast3.png" alt="CoarseMC logo" title="CoarseMC" align="center">
+		<h1>
+			<img src="https://github.com/CoarseMC/Server/blob/main/logo.png" alt="CoarseMC logo" title="CoarseMC" align="center" height="auto" width="100">
+			<text>CoarseMC</text>
+		</h1>
 	</a>
 </div>
 
