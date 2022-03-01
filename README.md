@@ -1,9 +1,9 @@
 <div align="center">
-	<h2>SteadFast3 Minecraft: Bedrock Edition Server Software</h2>
+	<h2>CoarseMC Minecraft: Bedrock Edition Server Software</h2>
 </div>
 <div align=center>
-	<a href=" https://github.com/PocketMine-SteadFast3/Steadfast3">
-		<img src="https://github.com/PocketMine-SteadFast3/Steadfast3/blob/main/Steadfast3.png" alt="Steadfast3 logo" title="Steadfast3" align="center">
+	<a href=" https://github.com/CoarseMC/Server">
+		<img src="https://github.com/CoarseMC/Server/blob/main/Steadfast3.png" alt="CoarseMC logo" title="CoarseMC" align="center">
 	</a>
 </div>
 
@@ -13,9 +13,9 @@
 
 | Build |                                                                              Download                                                                              | Discord |
 | :---: |:------------------------------------------------------------------------------------------------------------------------------------------------------------------:| :---: |
-| [![Build Status](https://travis-ci.org/MFDGaming/PocketMine-Steadfast3.svg?branch=master)](https://travis-ci.org/github/MFDGaming/PocketMine-Steadfast3) |                   [![Download](https://img.shields.io/badge/Download-PHAR-orange)](https://github.com/PocketMine-SteadFast3/Steadfast3/releases)                   | [![Discord](https://img.shields.io/badge/Chat-On%20Discord-738BD7.svg?style=normal&colorB=7289da)](https://discord.gg/NzdB7a2EKK) |
+| [![Build Status](https://travis-ci.org/CoarseMC/Server.svg?branch=master)](https://travis-ci.org/github/CoarseMC/Server) |                   [![Download](https://img.shields.io/badge/Download-PHAR-orange)](https://github.com/CoarseMC/Server/releases)                   | [![Discord](https://img.shields.io/badge/Chat-On%20Discord-738BD7.svg?style=normal&colorB=7289da)](https://discord.gg/NzdB7a2EKK) |
 
-- Steadfast3 is a server software that backports new Minecraft: Bedrock Edition versions to older PocketMine versions with better stability and performance, while retaining as many features from the new [PocketMine-MP](https://github.com/pmmp/Pocketmine-MP) versions as possible.<br>
+- CoarseMC is a server software that backports new Minecraft: Bedrock Edition versions to older PocketMine versions with better stability and performance, while retaining as many features from the new [PocketMine-MP](https://github.com/pmmp/Pocketmine-MP) versions as possible.<br>
 
 <div align="center">
 	<h2>Development</h2>
@@ -38,7 +38,7 @@
 </div>
 
 - <h3>Download:</h3>
-1. Download latest [release](https://github.com/PocketMine-SteadFast3/Steadfast3/releases)
+1. Download latest [release](https://github.com/CoarseMC/Server/releases)
 2. Upload it to your server folder.
 3. Move to next instruction.
 
